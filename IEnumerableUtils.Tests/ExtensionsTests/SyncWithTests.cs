@@ -12,6 +12,7 @@ namespace IEnumerableUtils.Tests
         [Theory]
         [ClassData(typeof(ShuffledSameSizeArrays<string, string>))]
         [ClassData(typeof(ShuffledSameSizeArrays<int, int>))]
+        #pragma warning disable xUnit1026 
         public void SyncsWithSameTypeSameSizeShuffled<T>(IList<T> a, IList<T> b, Func<T, T> converter = null)
         {
             if (a.Count > 0 && b.Count > 0)
@@ -19,21 +20,25 @@ namespace IEnumerableUtils.Tests
             a.SyncWith(b);
             Assert.Equal(b, a);
         }
+        #pragma warning restore xUnit1026
 
         [Theory]
         [ClassData(typeof(ShuffledSmallerSizeArrays<string, string>))]
         [ClassData(typeof(ShuffledSmallerSizeArrays<int, int>))]
+        #pragma warning disable xUnit1026 
         public void SyncsWithSameTypeSmallerSizeShuffled<T>(IList<T> a, IList<T> b, Func<T, T> converter = null)
         {
             if (a.Count > 0 && b.Count > 0)
                 Assert.NotEqual(b, a);
             a.SyncWith(b);
-            Assert.Equal(b, a);
+            Assert.Equal(b, a);            
         }
+        #pragma warning restore xUnit1026
 
         [Theory]
         [ClassData(typeof(ShuffledLargerSizeArrays<string, string>))]
         [ClassData(typeof(ShuffledLargerSizeArrays<int, int>))]
+        #pragma warning disable xUnit1026 
         public void SyncsWithSameTypeLargerSizeShuffled<T>(IList<T> a, IList<T> b, Func<T, T> converter = null)
         {
             if (a.Count > 0 && b.Count > 0)
@@ -41,6 +46,7 @@ namespace IEnumerableUtils.Tests
             a.SyncWith(b);
             Assert.Equal(b, a);
         }
+        #pragma warning restore xUnit1026
 
         [Theory]
         [ClassData(typeof(ShuffledSameSizeArrays<string, int>))]
