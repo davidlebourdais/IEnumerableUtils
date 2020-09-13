@@ -1,4 +1,5 @@
 # IEnumerable Utils
+[![Build Status](https://dev.azure.com/davidlebourdais/IEnumerableUtils/_apis/build/status/davidlebourdais.IEnumerableUtils?branchName=master)](https://dev.azure.com/davidlebourdais/IEnumerableUtils/_build/latest?definitionId=10&branchName=master)
 
 Contains a set of extension methods to manipulate IEnumerable<T> or IList<T> objects easier.
 

@@ -1,0 +1,40 @@
+name: $(SourceBranchName)-$(Date:yyyyMMdd)$(Rev:.r)
+
+pool:
+  vmImage: 'windows-latest'
+
+trigger:
+  branches:
+    include:
+    - master
+
+pr:
+- master
+
+jobs:
+- job: BuildAndTest
+  displayName: 'Build'
+
+  steps:
+    - task: DotNetCoreCLI@2
+      displayName: 'Restore all'
+      inputs:
+        command: restore
+        projects: '**/*.csproj'
+
+    - task: DotNetCoreCLI@2
+      displayName: 'Build all'
+      inputs:
+        command: 'build'
+        projects: '**/*.csproj'
+        arguments: '--configuration Release --no-restore'
+
+    - task: DotNetCoreCLI@2
+      displayName: 'Test'
+      condition: succeeded()
+      inputs:  
+        command: 'test'
+        projects: '**/*.Tests/*.csproj'
+        arguments: '--configuration Release --no-build --collect "Code coverage"'
+        testRunTitle: 'Test all'
+        publishTestResults: true
