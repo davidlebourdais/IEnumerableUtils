@@ -2,12 +2,12 @@
   <PropertyGroup>
     <TargetFrameworks>netcoreapp3.0;net471</TargetFrameworks>
     <PackageId>IEnumerableUtils</PackageId>
-    <Title>Additional collections, extension methods, and helpers for IEnumerable based objects</Title>
-    <PackageDescription>Provides additional types and methods to manipulate enumerables like List, Dictionary, etc.</PackageDescription>
-    <PackageTags>EMA;Extensions;Enumerable;IEnumerable;List;IList</PackageTags>
+    <Title>Utility methods for IEnumerable objects</Title>
+    <PackageDescription>Provides extension methods to manipulate enumerables like List, Dictionary, etc.</PackageDescription>
+    <PackageTags>Extensions;Enumerable;IEnumerable;List;IList</PackageTags>
     <Version>0.0.1</Version>
     <Authors>David Le Bourdais</Authors>
-	  <Copyright>Copyright © 2020</Copyright>
-	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Copyright>Copyright © 2020</Copyright>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 </Project>
